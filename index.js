@@ -7,7 +7,7 @@ function handleClick() {
 
 newDeck.addEventListener("click", handleClick)
 
-function callBack(){
+/*function callBack(){
     }
 
     setTimeout(callBack, 20000)
@@ -25,7 +25,7 @@ function gimmeThePets(person){
     return person.hasPet
 }
 
-const peopleWithPets = people.filter(gimmeThePets)
+const peopleWithPets = people.filter(gimmeThePets)*/
 
 function peopleHasPets(person, callback){
     
@@ -41,3 +41,11 @@ function peopleHasPets(person, callback){
         return resultingArray
 
 }
+
+const peopleWithPets = filterArray(people, function(person){
+   
+        return person.hasPet
+    
+} )
+
+console.log(peopleWithPets)
