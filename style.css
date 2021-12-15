@@ -2,4 +2,33 @@ html,
 body {
     margin: 0 auto;
     padding: 0;
+    height: 100vh;
+    display:flex; 
+    flex-direction:column; 
+    justify-content:center;
+    min-height:100vh;
+    
+    
+    
 }
+
+body {
+    background-image: url("/img/grass.jpg");
+    background: rgba(76, 175, 79, 0.274) 
+    background-position: center;
+}
+
+button {
+    padding: 1.5em;
+    border-radius: .5em;
+    border: none;
+    margin: 1em;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: darkgreen;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
