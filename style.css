@@ -4,8 +4,7 @@ body {
     padding: 0;
     height: 100vh;
     font-family: 'Readex Pro', sans-serif;
-    background-image: url("/img/grass.jpg");
-    background-position: center;
+    background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
     
     
 }
@@ -31,22 +30,19 @@ button {
 button#new-deck {
     align-self: flex-start;
     padding: 1em;
-
-}
-
-button:hover {
-    background-color: black;
-    color: whitesmoke;
     cursor: pointer;
 
 }
 
+
+
 button.draw {
     align-self: stretch;
+    cursor: pointer;
 }
 
 div.card-slot {
-    border: 1px solid black;
+    border: 1px solid lightgrey;
     border-radius: 5px;
     height: 120px;
     width: calc(120px * 5 / 7);
@@ -69,4 +65,9 @@ div.top > p {
     margin: 0;
     margin-left:  10px;
     padding-top: 1.4em;
+}
+
+button:disabled {
+    cursor: not-allowed;
+    
 }

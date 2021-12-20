@@ -9,7 +9,7 @@ function handleClick() {
     fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            remaining.textContent = `Remaining Cards: ${data.remaining}`
             deckId = data.deck_id
             console.log(deckId)
         })
@@ -30,6 +30,10 @@ drawCardBtn.addEventListener("click", () => {
             `
             const winnerText = determineCardWinner(data.cards[0], data.cards[1])
             header.textContent = winnerText
+
+            if (data.remaining === 0){
+                drawCardBtn.disabled = true
+            }
         })
 })
 
