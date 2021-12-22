@@ -14,7 +14,7 @@ let yourScoreEl = document.getElementById("your-score")
 
 async function handleClick() {
     const res= await fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
-    const data = await res.jason()
+    const data = await res.json()
             remaining.textContent = `Remaining Cards: ${data.remaining}`
             deckId = data.deck_id
             console.log(deckId)
