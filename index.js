@@ -12,22 +12,21 @@ const remainingText = document.getElementById("remaining")
 let computerScoreEl = document.getElementById("computer-score")
 let yourScoreEl = document.getElementById("your-score")
 
-function handleClick() {
-    fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
-        .then(res => res.json())
-        .then(data => {
+async function handleClick() {
+    const res= await fetch("https://apis.scrimba.com/deckofcards/api/deck/new/shuffle/")
+    const data = await res.jason()
             remaining.textContent = `Remaining Cards: ${data.remaining}`
             deckId = data.deck_id
             console.log(deckId)
-        })
+        
 }
 
 newDeckBtn.addEventListener("click", handleClick)
 
-drawCardBtn.addEventListener("click", () => {
-    fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
-        .then(res => res.json())
-        .then(data => {
+drawCardBtn.addEventListener("click", async () => {
+    const res = await fetch(`https://apis.scrimba.com/deckofcards/api/deck/${deckId}/draw/?count=2`)
+    const data = await res.json()
+      
             remaining.textContent = `Remaining Cards: ${data.remaining}`
             cardsContainer.children[0].innerHTML = `
                 <img src=${data.cards[0].image} class = "card" />`
@@ -48,7 +47,7 @@ drawCardBtn.addEventListener("click", () => {
                     header.textContent = "It's a tie game. Play again!"
                 }
             }
-        })
+    
 })
 
 
